@@ -1,0 +1,21 @@
+{% extends './base.html' %}
+
+{% block content %}
+
+	{% if notfound %}
+		{{ notfound }}
+	{% else %}
+		{% if crypto.Response %}
+			{{ quote }} doesn't exsit. Try it again...
+		{% endif %}
+		{% for key,value in crypto.DISPLAY.items %}
+			<div class="jumbotron">
+	  		  <h1 class="display-4">{{ key }}</h1>
+		      <strong>Price: </strong>{{ value.USD.PRICE }}<br/>
+		      <strong>24 High: </strong>{{ value.USD.HIGHDAY }}<br/>
+		      <strong>24 Low: </strong>{{ value.USD.LOWDAY }}<br/>
+		      <strong>MarketCap: </strong>{{ value.USD.MKTCAP}}<br/>
+			</div>
+	    {% endfor %}
+    {% endif %}
+{% endblock %}
