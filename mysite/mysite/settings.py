@@ -94,9 +94,9 @@ WSGI_APPLICATION = 'mysite.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'Fintech',
-        'USER': os.environ.get('SQL_USER'),
-        'PASSWORD': os.environ.get('SQL_PASS'),
+        'NAME': 'postgres',
+        'USER': os.environ.get('POSTGRESQL_USER'),
+        'PASSWORD': os.environ.get('POSTGRESQL_PASSWORD'),
         'HOST': '',
         'PORT': '5432',
     }

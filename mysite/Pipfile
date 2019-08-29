@@ -1,0 +1,23 @@
+[[source]]
+name = "pypi"
+url = "https://pypi.org/simple"
+verify_ssl = true
+
+[dev-packages]
+
+[packages]
+django = "*"
+django-countries = "*"
+django-allauth = "*"
+django-crispy-forms = "*"
+django-rest-framework = "*"
+psycopg2 = "*"
+image = "*"
+dash = "*"
+colorlover = "*"
+pandas = "*"
+pandas-datareader = "*"
+bs4 = "*"
+
+[requires]
+python_version = "3.7"
