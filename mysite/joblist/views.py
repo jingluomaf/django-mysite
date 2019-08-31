@@ -26,8 +26,13 @@ def jobCrawler(request):
     while nextPage is not None:
         for jobIndex in soup.find_all('article'):
             jobID = jobIndex.get('data-job-id')
-            latest_jobID = Job.objects.raw(
-                'SELECT * FROM joblist_job LIMIT 1')[0].id
+            
+            # if no jobs on the list set id=0
+            try:
+                latest_jobID = Job.objects.raw(
+                    'SELECT * FROM joblist_job LIMIT 1')[0].id
+            except:
+                latest_jobID = 0
             if int(jobID) < latest_jobID:
                 continue
             jobTitle = jobIndex.get('aria-label')

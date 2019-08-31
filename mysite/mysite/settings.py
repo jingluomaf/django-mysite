@@ -50,9 +50,7 @@ INSTALLED_APPS = [
     'joblist.apps.JoblistConfig',
     'shop.apps.ShopConfig',
     'crispy_forms',
-
     'rest_framework',
-
     'finance',
 
 ]
